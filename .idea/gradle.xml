@@ -15,7 +15,6 @@
             <option value="$PROJECT_DIR$/libs/common" />
             <option value="$PROJECT_DIR$/modules" />
             <option value="$PROJECT_DIR$/modules/home" />
-            <option value="$PROJECT_DIR$/modules/systemInfo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

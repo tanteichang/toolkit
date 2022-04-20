@@ -5,7 +5,11 @@
       <map>
         <entry key="modules/home/src/main/res/layout/activity_home.xml" value="0.22916666666666666" />
         <entry key="modules/home/src/main/res/layout/activity_main.xml" value="0.21510416666666668" />
+        <entry key="modules/home/src/main/res/layout/home_activity_home.xml" value="0.1" />
+        <entry key="modules/home2/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
+        <entry key="modules/myapplication/src/main/res/layout/myapplication_activity_main.xml" value="0.2105978260869565" />
         <entry key="modules/systemInfo/src/main/res/layout/activity_system_info.xml" value="0.1" />
+        <entry key="modules/systemInfo/src/main/res/layout/sysinfo_activity_system_info.xml" value="0.19791666666666666" />
       </map>
     </option>
   </component>

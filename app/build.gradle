@@ -1,15 +1,31 @@
-apply from:"$rootDir/module_base.gradle"
-
 apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+def cfg = rootProject.ext;
+
 
 android {
-    defaultConfig {
-        if (rootProject.ext.isDebug) {  applicationId "com.tantei.toolkit"}
+    compileSdk cfg.android.compileSdk
 
+    defaultConfig {
+        applicationId "com.tantei.toolkit"
+        minSdk cfg.android.minSdk
+        targetSdk cfg.android.targetSdk
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // arouter
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ AROUTER_MODULE_NAME : project.getName() ]
             }
+        }
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())}
         }
     }
     sourceSets {
@@ -17,9 +33,31 @@ android {
             manifest.srcFile 'src/main/AndroidManifest.xml'
         }
     }
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
     implementation project(path: ':libs:common')
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    implementation 'com.alibaba:arouter-api:1.5.2'
+    kapt "com.alibaba:arouter-compiler:1.5.2"
+
+//    implementation project(path: ':modules:home')
 }
