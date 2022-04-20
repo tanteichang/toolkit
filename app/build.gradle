@@ -1,0 +1,25 @@
+apply from:"$rootDir/module_base.gradle"
+
+apply plugin: 'com.android.application'
+
+android {
+    defaultConfig {
+        if (rootProject.ext.isDebug) {  applicationId "com.tantei.toolkit"}
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+            }
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':libs:common')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+}

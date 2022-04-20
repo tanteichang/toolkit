@@ -1,0 +1,58 @@
+def cfg = rootProject.ext;
+
+if (cfg.isDebug) {
+    apply plugin: 'com.android.application'
+} else  {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk cfg.android.compileSdk
+
+    defaultConfig {
+        minSdk cfg.android.minSdk
+        targetSdk cfg.android.targetSdk
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // arouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+            }
+        }
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())}
+        }
+    }
+
+    sourceSets {
+        main {
+            if (cfg.isDebug) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}

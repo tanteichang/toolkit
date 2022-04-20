@@ -1,0 +1,21 @@
+ext {
+    isDebug = true
+
+    android = [
+            compileSdk       : 32,
+            minSdk           : 21,
+            targetSdk        : 32,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    dependenciesAndroid = [
+            'core-ktx': 'androidx.core:core-ktx:1.7.0',
+            'appcompat': 'androidx.appcompat:appcompat:1.4.1',
+            'material': 'com.google.android.material:material:1.5.0',
+            'constraintlayout': 'androidx.constraintlayout:constraintlayout:2.1.3',
+            'junit': 'junit:junit:4.13.2',
+            'test.ext': 'androidx.test.ext:junit:1.1.3',
+            'espresso-core': 'androidx.test.espresso:espresso-core:3.4.0',
+    ]
+}

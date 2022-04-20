@@ -1,0 +1,29 @@
+apply from:"$rootDir/module_base.gradle"
+
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    defaultConfig {
+        if (rootProject.ext.isDebug) {  applicationId "com.tantei.toolkit.module.home"}
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+            }
+        }
+    }
+    resourcePrefix "home_"
+
+}
+
+dependencies {
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+    implementation project(path: ':libs:common')
+
+}
