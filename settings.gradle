@@ -16,3 +16,4 @@ rootProject.name = "toolkit"
 include ':app'
 include ':libs:common'
 include ':modules:home'
+include ':modules:phonehelper'

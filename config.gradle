@@ -17,5 +17,6 @@ ext {
             'junit': 'junit:junit:4.13.2',
             'test.ext': 'androidx.test.ext:junit:1.1.3',
             'espresso-core': 'androidx.test.espresso:espresso-core:3.4.0',
+            'viewpager2': "androidx.viewpager2:viewpager2:1.0.0"
     ]
 }

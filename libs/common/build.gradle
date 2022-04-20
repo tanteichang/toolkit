@@ -29,6 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -41,6 +44,7 @@ dependencies {
     api cfg.dependenciesAndroid['appcompat']
     api cfg.dependenciesAndroid['material']
     api cfg.dependenciesAndroid['constraintlayout']
+    api cfg.dependenciesAndroid['viewpager2']
     // --- 3rd ---
     // arouter
     api 'com.alibaba:arouter-api:1.5.2'

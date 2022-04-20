@@ -56,8 +56,10 @@ android {
 
 dependencies {
     implementation project(path: ':libs:common')
-    implementation 'com.alibaba:arouter-api:1.5.2'
     kapt "com.alibaba:arouter-compiler:1.5.2"
 
-//    implementation project(path: ':modules:home')
+
+    if (!rootProject.ext.isDebug) {
+        implementation project(path: ':modules:home')
+    }
 }

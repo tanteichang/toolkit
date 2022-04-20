@@ -4,10 +4,10 @@ apply plugin: 'kotlin-kapt'
 
 android {
     defaultConfig {
-        if (rootProject.ext.isDebug) {  applicationId "com.tantei.toolkit.module.home"}
+        if (rootProject.ext.isDebug) {  applicationId "com.tantei.toolkit.module.phonehelper"}
 
     }
-    resourcePrefix "home_"
+    resourcePrefix "phonehelper_"
     kapt {
         arguments {
             arg("AROUTER_MODULE_NAME", project.getName())

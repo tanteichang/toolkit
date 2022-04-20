@@ -8,6 +8,8 @@
         <entry key="modules/home/src/main/res/layout/home_activity_home.xml" value="0.1" />
         <entry key="modules/home2/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
         <entry key="modules/myapplication/src/main/res/layout/myapplication_activity_main.xml" value="0.2105978260869565" />
+        <entry key="modules/phonehelper/src/main/res/layout/phone_helper_activity_phone_helper.xml" value="0.3229166666666667" />
+        <entry key="modules/phonehelper/src/main/res/layout/phonehelper_activity_phone_helper.xml" value="0.1867816091954023" />
         <entry key="modules/systemInfo/src/main/res/layout/activity_system_info.xml" value="0.1" />
         <entry key="modules/systemInfo/src/main/res/layout/sysinfo_activity_system_info.xml" value="0.19791666666666666" />
       </map>
