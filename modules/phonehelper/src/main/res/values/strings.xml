@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">phoneHelper</string>
+    <string name="phonehelper_app_name">phoneHelper</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="phonehelper_hello_blank_fragment">Hello blank fragment</string>
+    <string name="phonehelper_system_info">系统信息</string>
 </resources>

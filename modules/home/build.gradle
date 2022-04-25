@@ -5,7 +5,6 @@ apply plugin: 'kotlin-kapt'
 android {
     defaultConfig {
         if (rootProject.ext.isDebug) {  applicationId "com.tantei.toolkit.module.home"}
-
     }
     resourcePrefix "home_"
     kapt {

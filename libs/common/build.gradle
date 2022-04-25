@@ -5,6 +5,8 @@ plugins {
 
 def cfg = rootProject.ext;
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdk cfg.android.compileSdk
 
@@ -45,7 +47,7 @@ dependencies {
     api cfg.dependenciesAndroid['material']
     api cfg.dependenciesAndroid['constraintlayout']
     api cfg.dependenciesAndroid['viewpager2']
-    // --- 3rd ---
+    // --- 3rd --
     // arouter
     api 'com.alibaba:arouter-api:1.5.2'
 //    kapt 'com.alibaba:arouter-compiler:1.5.2'
